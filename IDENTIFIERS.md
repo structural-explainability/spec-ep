@@ -36,42 +36,50 @@ Identifiers are:
 - suitable for direct mapping to Lean theorem names
 
 Identifiers MUST NOT be renamed or repurposed.
-New identifiers MAY be added only in a new major version of EP.
+New identifiers MAY be added only in a new major version of this document.
+
+## Identifier Notes
+
+Each identifier MUST be followed by exactly one note.
+
+- The note MUST be expressed as a single bullet.
+- The bullet text MAY wrap across lines.
+- No additional bullets, sublists, or structural markers are permitted.
+- Notes are explanatory only and do not introduce additional requirements.
 
 ## Canonical Identifier List (Alphabetical, with Notes)
 
 EP.CONFORMANCE.AE.REQUIRED
 
-States that EP operates over Accountable Entities and their identity regimes.
+- States that EP operates over Accountable Entities and their identity regimes.
 
 EP.CONFORMANCE.SE.REQUIRED
 
-States that EP conforms to the Structural Explainability specification.
+- States that EP conforms to the Structural Explainability specification.
 
 EP.DEFINITION.CORE
 
-Defines Evolution Protocol as a structural framework for representing
-graph evolution over accountable entities.
+- Defines Evolution Protocol as a structural framework for representing graph evolution over accountable entities.
 
 EP.GRAPH.DEFINITION
 
-Defines the structural form of graphs in EP.
+- Defines the structural form of graphs in EP.
 
 EP.GRAPH.DELTA
 
-Defines structured, non-causal graph change records.
+- Defines structured, non-causal graph change records.
 
 EP.GRAPH.EVOLUTION
 
-Defines ordered graph histories connecting states via deltas.
+- Defines ordered graph histories connecting states via deltas.
 
 EP.GRAPH.STATE
 
-Defines immutable graph snapshots in an ordered history.
+- Defines immutable graph snapshots in an ordered history.
 
 EP.SCOPE.EXCLUSIONS
 
-Defines what EP explicitly does not specify.
+- Defines what EP explicitly does not specify.
 
 ## Cross-Artifact Consistency Rule
 
@@ -79,7 +87,7 @@ Each identifier in this list MUST appear:
 
 - exactly once in SPEC.md
 - exactly once in CONFORMANCE.md
-- exactly once as a field in the Lean ConformanceEvidence structure
+- exactly once as a field in the Lean `ConformanceEvidence` structure
 - exactly once in the Lean requirements list
 
 Alphabetical order SHOULD be preserved across all artifacts.

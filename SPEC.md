@@ -30,7 +30,7 @@ Some requirements describe what the substrate MAY represent,
 while others constrain how such representations MUST NOT be interpreted.
 
 Overlap between these classes is intentional:
-representation permissions do not imply explanatory commitment.
+representation permissions do not imply explanatory or normative commitment.
 
 ## Identifier Semantics and Stability
 
