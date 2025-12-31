@@ -1,0 +1,44 @@
+schema = "se-manifest-1"
+
+[repo]
+name = "spec-ep"
+org  = "structural-explainability"
+kind = "spec"
+status = "normative"
+since = "2025"
+summary = "Defines graph evolution over accountable entities without embedding explanation."
+
+[layer]
+space = "SE"
+role  = "graph-evolution"
+
+[depends]
+required = [
+  "structural-explainability/spec-se@v1",
+  "structural-explainability/spec-ae@v1",
+]
+optional = []
+
+[provides]
+artifacts = ["README.md", "SPEC.md", "IDENTIFIERS.md", "CONFORMANCE.md"]
+
+[scope]
+includes = [
+  "graph, state, delta, evolution constructs",
+  "structural change recording",
+  "history reconstruction constraints",
+]
+excludes = [
+  "relationship semantics",
+  "explanation or justification",
+  "truth, validation, or enforcement",
+  "optimization or decision logic",
+]
+
+[citation]
+cff = "CITATION.cff"
+preferred = "spec"
+bib_hint = "spec-ep-2025"
+
+[traceability]
+identifier_map = "none"
