@@ -41,4 +41,4 @@ preferred = "spec"
 bib_hint = "case2025-spec-ep"
 
 [traceability]
-identifier_map = "none"
+identifier_map = "structural-explainability/spec-ep/IDENTIFIERS.md"
