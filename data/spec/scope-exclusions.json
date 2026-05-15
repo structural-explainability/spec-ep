@@ -1,0 +1,26 @@
+{
+  "schema": "se-boundary-scope-exclusions-1",
+  "spec": {
+    "id": "EP",
+    "name": "Governance Boundary",
+    "version": "0.9.1",
+    "status": "normative"
+  },
+  "excluded": [
+    "domain vocabularies for relationship meaning",
+    "accountable entity kinds",
+    "SE profile kinds",
+    "identity regimes",
+    "persistence outcomes",
+    "transformation families or operators",
+    "causal models or explanatory mechanisms",
+    "epistemic validation or truth evaluation",
+    "authority",
+    "legitimacy",
+    "obligation",
+    "normative judgment, compliance, or enforcement",
+    "optimization, decision-making, or recommendation logic",
+    "governance lifecycle rules",
+    "interpretation, explanation, evidence, or attestation interfaces"
+  ]
+}

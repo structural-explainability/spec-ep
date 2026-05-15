@@ -1,0 +1,76 @@
+{
+  "schema": "se-boundary-requirements-1",
+  "spec": {
+    "id": "EP",
+    "name": "Governance Boundary",
+    "version": "0.9.1",
+    "status": "normative"
+  },
+  "requirements": [
+    {
+      "id": "EP.CONFORMANCE.AE.REQUIRED",
+      "note": "States that EP operates over Accountable Entities and preserves AE kind/profile mappings.",
+      "normative_source": "SPEC.md#EP.CONFORMANCE.AE.REQUIRED"
+    },
+    {
+      "id": "EP.CONFORMANCE.GB.REQUIRED",
+      "note": "States that EP preserves Governance Boundary constraints for governance-related records and actions.",
+      "normative_source": "SPEC.md#EP.CONFORMANCE.GB.REQUIRED"
+    },
+    {
+      "id": "EP.CONFORMANCE.IB.REQUIRED",
+      "note": "States that EP preserves Interpretation Boundary constraints and prevents interpretive leakage",
+      "normative_source": "SPEC.md#EP.CONFORMANCE.IB.REQUIRED"
+    },
+    {
+      "id": "EP.CONFORMANCE.SE.REQUIRED",
+      "note": "States that EP conforms to the Structural Explainability specification.",
+      "normative_source": "SPEC.md#EP.CONFORMANCE.SE.REQUIRED"
+    },
+    {
+      "id": "EP.DEFINITION.CORE",
+      "note": "Defines Evolution Protocol as a structural protocol for representing accountable-entity",
+      "normative_source": "SPEC.md#EP.DEFINITION.CORE"
+    },
+    {
+      "id": "EP.GRAPH.DEFINITION",
+      "note": "Defines the structural form of graphs in EP.",
+      "normative_source": "SPEC.md#EP.GRAPH.DEFINITION"
+    },
+    {
+      "id": "EP.GRAPH.DELTA",
+      "note": "Defines structured, non-causal graph change records.",
+      "normative_source": "SPEC.md#EP.GRAPH.DELTA"
+    },
+    {
+      "id": "EP.GRAPH.EVOLUTION",
+      "note": "Defines ordered graph histories connecting states through deltas.",
+      "normative_source": "SPEC.md#EP.GRAPH.EVOLUTION"
+    },
+    {
+      "id": "EP.GRAPH.IDENTITY.NONDERIVATION",
+      "note": "States that graph continuity does not by itself imply SE identity persistence.",
+      "normative_source": "SPEC.md#EP.GRAPH.IDENTITY.NONDERIVATION"
+    },
+    {
+      "id": "EP.GRAPH.STATE",
+      "note": "Defines immutable graph snapshots in an ordered history.",
+      "normative_source": "SPEC.md#EP.GRAPH.STATE"
+    },
+    {
+      "id": "EP.PERSISTENCE.REFERENCE",
+      "note": "Defines how EP may reference upstream SE persistence outcomes without redefining them.",
+      "normative_source": "SPEC.md#EP.PERSISTENCE.REFERENCE"
+    },
+    {
+      "id": "EP.SCOPE.EXCLUSIONS",
+      "note": "Defines what EP explicitly does not specify.",
+      "normative_source": "SPEC.md#EP.SCOPE.EXCLUSIONS"
+    },
+    {
+      "id": "EP.TRANSFORMATION.REFERENCE",
+      "note": "Defines how EP may reference upstream SE transformation families or operators without redefining them.",
+      "normative_source": "SPEC.md#EP.TRANSFORMATION.REFERENCE"
+    }
+  ]
+}

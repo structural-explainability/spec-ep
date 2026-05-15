@@ -1,0 +1,54 @@
+"""Reference artifact commands."""
+
+import argparse
+from pathlib import Path
+
+from spec_ep.load import load_fallback_version
+from spec_ep.orchestrate import run_ref_export, run_ref_validate
+from spec_ep.ref_utils import find_repo_root
+
+
+def ref_export_main(argv: list[str] | None = None) -> int:
+    """Generate or check reference artifacts."""
+    parser = argparse.ArgumentParser(description="Export spec-ep data/spec artifacts.")
+    parser.add_argument("--repo-root", type=Path, default=None)
+    parser.add_argument("--version", default=None)
+    parser.add_argument("--check", action="store_true")
+    args = parser.parse_args(argv)
+
+    root = find_repo_root(args.repo_root)
+
+    if args.version is None:
+        args.version = load_fallback_version(root)
+
+    paths = run_ref_export(
+        version=args.version,
+        root=root,
+        check=args.check,
+    )
+
+    action = "Checked" if args.check else "Wrote"
+    for path in paths:
+        print(f"{action} {path}")
+
+    return 0
+
+
+def ref_validate_main(argv: list[str] | None = None) -> int:
+    """Validate generated reference artifacts."""
+    parser = argparse.ArgumentParser(
+        description="Validate spec-ep data/spec artifacts."
+    )
+    parser.add_argument("--repo-root", type=Path, default=None)
+    parser.add_argument("--version", default=None)
+    args = parser.parse_args(argv)
+
+    root = find_repo_root(args.repo_root)
+
+    if args.version is None:
+        args.version = load_fallback_version(root)
+
+    run_ref_validate(version=args.version, root=root)
+
+    print("spec-ep reference validation passed.")
+    return 0

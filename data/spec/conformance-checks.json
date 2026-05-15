@@ -1,0 +1,180 @@
+{
+  "schema": "se-boundary-conformance-checks-1",
+  "spec": {
+    "id": "EP",
+    "name": "Governance Boundary",
+    "version": "0.9.1",
+    "status": "normative"
+  },
+  "checks": [
+    {
+      "id": "EP.CONFORMANCE.AE.REQUIRED",
+      "checks": [
+        "[ ] Graph nodes reference Accountable Entities.",
+        "[ ] AE kind mappings are preserved across graph evolution.",
+        "[ ] Upstream SE profile-kind mappings are preserved across graph evolution.",
+        "[ ] EP does not redefine accountable entity kinds, SE profile kinds, identity regimes,",
+        "or persistence behavior."
+      ],
+      "failure_conditions": [
+        "AE kinds, SE profile kinds, identity regimes, or persistence behavior are"
+      ]
+    },
+    {
+      "id": "EP.CONFORMANCE.GB.REQUIRED",
+      "checks": [
+        "[ ] Governance-related records or actions preserve Governance Boundary constraints.",
+        "[ ] Governance records, lifecycle labels, approvals, deprecations, supersessions, or",
+        "provenance remain structural records only.",
+        "[ ] Governance-related EP records do not assert authority, legitimacy, obligation,",
+        "correctness, or enforcement."
+      ],
+      "failure_conditions": [
+        "governance-related records are treated as authority, legitimacy, obligation,"
+      ]
+    },
+    {
+      "id": "EP.CONFORMANCE.IB.REQUIRED",
+      "checks": [
+        "[ ] Interpretation Boundary constraints are preserved.",
+        "[ ] Interpretation is not embedded into graph structure, graph state, graph delta,",
+        "[ ] Interpretive attachments are external and non-mutating."
+      ],
+      "failure_conditions": [
+        "interpretation modifies, replaces, or redefines graph structure, graph state,"
+      ]
+    },
+    {
+      "id": "EP.CONFORMANCE.SE.REQUIRED",
+      "checks": [
+        "[ ] The artifact explicitly claims conformance with Structural Explainability.",
+        "[ ] No EP construct weakens, overrides, or reinterprets SE neutrality constraints.",
+        "[ ] EP constructs remain structural and do not embed epistemic, causal, normative,"
+      ],
+      "failure_conditions": [
+        "SE neutrality constraints are weakened, bypassed, overridden, or reinterpreted."
+      ]
+    },
+    {
+      "id": "EP.DEFINITION.CORE",
+      "checks": [
+        "[ ] The artifact treats EP as a structural protocol for accountable-entity graph records",
+        "moving through time.",
+        "[ ] EP scope is limited to graph form, graph state, graph delta, graph evolution history,",
+        "[ ] EP does not define interpretation, explanation, evaluation, authority, legitimacy,"
+      ],
+      "failure_conditions": [
+        "EP is treated as an interpretive, explanatory, transactional, governance-authority,"
+      ]
+    },
+    {
+      "id": "EP.GRAPH.DEFINITION",
+      "checks": [
+        "[ ] Graphs consist of nodes referencing Accountable Entities and edges representing",
+        "[ ] Graphs assert only structural existence and linkage.",
+        "[ ] Graphs do not assert relationship meaning beyond structural linkage."
+      ],
+      "failure_conditions": [
+        "semantic meaning, interpretation, causal explanation, epistemic truth,"
+      ]
+    },
+    {
+      "id": "EP.GRAPH.DELTA",
+      "checks": [
+        "[ ] Graph deltas record finite structural changes between graph states.",
+        "[ ] Graph deltas may record node introduction, node retirement, edge addition, edge removal,",
+        "[ ] Graph deltas may reference upstream SE transformation families or operators.",
+        "[ ] Graph deltas do not define transformation families, transformation operators, or",
+        "[ ] Graph deltas do not assert reasons, causes, correctness, validity, compliance,"
+      ],
+      "failure_conditions": [
+        "deltas explain, justify, evaluate, validate, authorize, enforce,"
+      ]
+    },
+    {
+      "id": "EP.GRAPH.EVOLUTION",
+      "checks": [
+        "[ ] Graph evolution is an ordered sequence of graph states connected by graph deltas.",
+        "[ ] Prior states remain structurally accessible or reconstructible.",
+        "[ ] Historical traceability is preserved without destructive overwrite.",
+        "[ ] AE kind/profile mappings are preserved unless an explicit structural delta records",
+        "[ ] References to upstream transformation and persistence classifications remain traceable"
+      ],
+      "failure_conditions": [
+        "history is collapsed, rewritten, destructively overwritten, made non-traceable,"
+      ]
+    },
+    {
+      "id": "EP.GRAPH.IDENTITY.NONDERIVATION",
+      "checks": [
+        "[ ] Node continuity does not by itself imply SE identity persistence.",
+        "[ ] Edge continuity does not by itself imply SE identity persistence.",
+        "[ ] Graph-state continuity does not by itself imply SE identity persistence.",
+        "[ ] Graph-history continuity does not by itself imply SE identity persistence.",
+        "[ ] Persistence is referenced only through upstream SE persistence rules, profile-relative"
+      ],
+      "failure_conditions": [
+        "PRS, BRK, IGN, identity relevance, identity preservation, or identity breakage"
+      ]
+    },
+    {
+      "id": "EP.GRAPH.STATE",
+      "checks": [
+        "[ ] Graph states are immutable once recorded.",
+        "[ ] Graph states support structural comparison.",
+        "[ ] Graph states are sufficient to support structural access to the recorded graph",
+        "[ ] Graph state continuity is not treated as identity persistence unless persistence"
+      ],
+      "failure_conditions": [
+        "graph states are mutable, overwritten in place, non-comparable, or used"
+      ]
+    },
+    {
+      "id": "EP.PERSISTENCE.REFERENCE",
+      "checks": [
+        "[ ] EP may reference upstream SE persistence outcomes and classifications.",
+        "[ ] Persistence references remain structurally explicit.",
+        "[ ] Persistence references remain traceable to upstream SE contract artifacts.",
+        "[ ] EP does not redefine PRS, BRK, IGN, identity relevance, identity irrelevance,"
+      ],
+      "failure_conditions": [
+        "EP defines, modifies, infers, or reinterprets upstream persistence"
+      ]
+    },
+    {
+      "id": "EP.SCOPE.EXCLUSIONS",
+      "checks": [
+        "[ ] domain vocabularies for relationship meaning",
+        "[ ] accountable entity kinds",
+        "[ ] SE profile kinds",
+        "[ ] identity regimes",
+        "[ ] persistence outcomes",
+        "[ ] transformation families or operators",
+        "[ ] causal models or explanatory mechanisms",
+        "[ ] epistemic validation or truth evaluation",
+        "[ ] authority",
+        "[ ] legitimacy",
+        "[ ] obligation",
+        "[ ] normative judgment, compliance, or enforcement",
+        "[ ] optimization, decision-making, or recommendation logic",
+        "[ ] governance lifecycle rules",
+        "[ ] interpretation, explanation, evidence, or attestation interfaces"
+      ],
+      "failure_conditions": [
+        "Presence of any excluded concern as an EP-defined construct constitutes non-conformance."
+      ]
+    },
+    {
+      "id": "EP.TRANSFORMATION.REFERENCE",
+      "checks": [
+        "[ ] EP may reference upstream SE transformation families, operators, or classifications.",
+        "[ ] Transformation references remain structurally explicit.",
+        "[ ] Transformation references remain traceable to upstream SE contract artifacts.",
+        "[ ] EP does not define transformation families, transformation operators,"
+      ],
+      "failure_conditions": [
+        "EP defines, modifies, infers, or reinterprets upstream transformation families,"
+      ]
+    }
+  ]
+}

@@ -8,9 +8,10 @@ Section ordering, formatting, and presentation are non-normative.
 
 ## Overview
 
-Defines the structural representation of graph evolution
-over Accountable Entities (AE),
-without causal or interpretive commitment,
+Defines the structural representation of accountable-entity graph states,
+deltas, transitions, and histories over time,
+without causal, epistemic, normative, governance-authority,
+or interpretive commitment,
 under the neutrality constraints of Structural Explainability (SE).
 
 ## Identifier Semantics and Ordering
@@ -25,7 +26,7 @@ editorial discretion and ensure deterministic placement.
 
 All identifiers follow this pattern:
 
-EP.<CATEGORY>.<SUBCATEGORY>.<QUALIFIER>
+All identifiers begin with `EP.` and use uppercase dot-separated semantic terms.
 
 Identifiers are:
 
@@ -51,7 +52,16 @@ Each identifier MUST be followed by exactly one note.
 
 EP.CONFORMANCE.AE.REQUIRED
 
-- States that EP operates over Accountable Entities and their identity regimes.
+- States that EP operates over Accountable Entities and preserves AE kind/profile mappings.
+
+EP.CONFORMANCE.GB.REQUIRED
+
+- States that EP preserves Governance Boundary constraints for governance-related records and actions.
+
+EP.CONFORMANCE.IB.REQUIRED
+
+- States that EP preserves Interpretation Boundary constraints and prevents interpretive leakage
+  into graph evolution records.
 
 EP.CONFORMANCE.SE.REQUIRED
 
@@ -59,7 +69,8 @@ EP.CONFORMANCE.SE.REQUIRED
 
 EP.DEFINITION.CORE
 
-- Defines Evolution Protocol as a structural framework for representing graph evolution over accountable entities.
+- Defines Evolution Protocol as a structural protocol for representing accountable-entity
+  graph records as they move through time.
 
 EP.GRAPH.DEFINITION
 
@@ -71,15 +82,27 @@ EP.GRAPH.DELTA
 
 EP.GRAPH.EVOLUTION
 
-- Defines ordered graph histories connecting states via deltas.
+- Defines ordered graph histories connecting states through deltas.
+
+EP.GRAPH.IDENTITY.NONDERIVATION
+
+- States that graph continuity does not by itself imply SE identity persistence.
 
 EP.GRAPH.STATE
 
 - Defines immutable graph snapshots in an ordered history.
 
+EP.PERSISTENCE.REFERENCE
+
+- Defines how EP may reference upstream SE persistence outcomes without redefining them.
+
 EP.SCOPE.EXCLUSIONS
 
 - Defines what EP explicitly does not specify.
+
+EP.TRANSFORMATION.REFERENCE
+
+- Defines how EP may reference upstream SE transformation families or operators without redefining them.
 
 ## Cross-Artifact Consistency Rule
 

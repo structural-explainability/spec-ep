@@ -1,39 +1,52 @@
 # ============================================================
-# SE_MANIFEST.toml (Repository Intent, Scope, and Role)
+# SE_MANIFEST.toml (Repository Declaration)
+# spec-ep
 # ============================================================
 
-schema = "se-manifest-1"
-schema_url = "https://github.com/structural-explainability/spec-se/blob/main/manifests/se-manifest-1.md"
+schema = "se-manifest-schema"
+schema_url = "https://github.com/structural-explainability/se-manifest-schema/blob/main/manifest-schema.toml"
+
+# === Identity ===
 
 [meta]
-# Non-normative contextual information
-framework = "Structural Explainability"
-framework_url = "https://github.com/structural-explainability"
-framework_note = "Provides definitions and conventions for SE_MANIFEST semantics."
-description = "Declarative claim of repository intent, scope, and role."
 purpose = "To make explicit the boundaries, responsibilities, and expectations of this repository relative to others."
 
 [repo]
 name = "spec-ep"
 org  = "structural-explainability"
-kind = "spec"
-status = "normative"
+class = "spec"
+kind = "evolution-protocol"
+status = "active"
 since = "2025"
 summary = "Defines graph evolution over accountable entities without embedding explanation."
 
 [layer]
 space = "SE"
-role  = "graph-evolution"
+role  = "specification"
+
+# === Dependencies ===
 
 [depends]
 required = [
   "structural-explainability/spec-se@v1",
-  "structural-explainability/spec-ae@v1",
+  "structural-explainability/spec-ep@v1",
 ]
 optional = []
 
+# === Provided artifacts ===
+
 [provides]
-artifacts = ["README.md", "SPEC.md", "IDENTIFIERS.md", "CONFORMANCE.md"]
+artifacts = [
+  "README.md",
+  "SPEC.md",
+  "IDENTIFIERS.md",
+  "CONFORMANCE.md",
+  "data/spec/requirements.json",
+  "data/spec/conformance-checks.json",
+  "data/spec/scope-exclusions.json",
+]
+
+# === Scope ===
 
 [scope]
 includes = [
@@ -48,10 +61,28 @@ excludes = [
   "optimization or decision logic",
 ]
 
+# === Validation ===
+
+[validation]
+entrypoint = "uv run se-validate"
+export_check_entrypoint = "uv run se-ref-export --check"
+reference_entrypoint = "uv run se-ref-validate"
+strict_entrypoint = "uv run se-validate --strict"
+tag_entrypoint = "uv run python -m se_manifest_schema validate --strict --require-tag"
+
+# === Behavior / governance ===
+
+[naming]
+pattern = "spec-*"
+
+[governance]
+authority = "structural-explainability"
+
+# === External references ===
+
 [citation]
 cff = "CITATION.cff"
 preferred = "spec"
-bib_hint = "case2025-spec-ep"
 
 [traceability]
 identifier_map = "structural-explainability/spec-ep/IDENTIFIERS.md"

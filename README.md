@@ -1,8 +1,11 @@
 # Evolution Protocol (EP)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/license/MIT)
-![Build Status](https://github.com/structural-explainability/spec-ep/actions/workflows/ci-md.yml/badge.svg?branch=main)
-[![Check Links](https://github.com/structural-explainability/spec-ep/actions/workflows/links.yml/badge.svg)](https://github.com/structural-explainability/spec-ep/actions/workflows/links.yml)
+[![Repo](https://img.shields.io/badge/repo-GitHub-black?logo=github)](https://github.com/structural-explainability/spec-ep)
+[![Tooling](https://img.shields.io/badge/python-3.15%2B-blue?logo=python)](./pyproject.toml)
+[![License](https://img.shields.io/badge/license-MIT-yellow.svg)](./LICENSE)
+
+[![CI](https://github.com/structural-explainability/spec-ep/actions/workflows/ci-python.yml/badge.svg?branch=main)](https://github.com/structural-explainability/spec-ep/actions/workflows/ci-python.yml)
+[![Links](https://github.com/structural-explainability/spec-ep/actions/workflows/links.yml/badge.svg?branch=main)](https://github.com/structural-explainability/spec-ep/actions/workflows/links.yml)
 [![Dependabot](https://img.shields.io/badge/Dependabot-enabled-brightgreen.svg)](https://github.com/structural-explainability/spec-ep/security)
 
 > Authoritative specification of the Evolution Protocol (EP).
@@ -84,23 +87,66 @@ EP makes change observable and reconstructible
 while leaving explanation, evaluation, and judgment
 to external frameworks.
 
-## Developer (running pre-commit)
+## Command Reference
 
-Steps to run pre-commit locally. Install `uv`.
+<details>
+<summary>Show command reference</summary>
 
-Initialize once:
+### In a machine terminal
+
+Open a machine terminal where you want the project:
+
+```shell
+git clone https://github.com/structural-explainability/spec-ep
+
+cd spec-ep
+code .
+```
+
+### In a VS Code terminal
 
 ```shell
 uv self update
+uv python pin 3.15
+uv sync --extra dev --extra docs --upgrade
+
+# install git hooks once per clone
 uvx pre-commit install
-uvx pre-commit run --all-files
-```
 
-Save progress as needed:
+# generate/check registry artifacts
+uv run se-validate
+uv run se-ref-export
+uv run se-ref-export --check
+uv run se-ref-validate
+uv run se-validate --strict
 
-```shell
+# autofix and manual fix issues
 git add -A
-# If pre-commit makes changes, re-run `git add -A` before committing.
+uvx pre-commit run --all-files
+# repeat if changes were made
+git add -A
+uvx pre-commit run --all-files
+
+# do chores
+uv run python -m pyright
+uv run python -m pytest
+
+# save progress
+git add -A
 git commit -m "update"
 git push -u origin main
 ```
+
+</details>
+
+## Citation
+
+[CITATION.cff](./CITATION.cff)
+
+## License
+
+[MIT](./LICENSE)
+
+## Manifest
+
+[SE_MANIFEST.toml](./SE_MANIFEST.toml)
