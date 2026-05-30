@@ -1,12 +1,11 @@
 # ============================================================
 # SE_MANIFEST.toml (Repository Declaration)
-# spec-ep
 # ============================================================
 
 schema = "se-manifest-schema"
-schema_url = "https://github.com/structural-explainability/se-manifest-schema/blob/main/manifest-schema.toml"
+schema_url = "https://raw.githubusercontent.com/structural-explainability/se-manifest-schema/main/manifest-schema.toml"
 
-# === Identity ===
+# === Repository Identity ===
 
 [meta]
 purpose = "To make explicit the boundaries, responsibilities, and expectations of this repository relative to others."
@@ -15,25 +14,26 @@ purpose = "To make explicit the boundaries, responsibilities, and expectations o
 name = "spec-ep"
 org  = "structural-explainability"
 class = "spec"
-kind = "evolution-protocol"
+kind = "specification"
 status = "active"
 since = "2025"
 summary = "Defines graph evolution over accountable entities without embedding explanation."
 
+# === Layer Position ===
+
 [layer]
-space = "SE"
+space = "structural-explainability"
 role  = "specification"
 
-# === Dependencies ===
+# === Dependency Declarations ===
 
 [depends]
 required = [
-  "structural-explainability/spec-se@v1",
-  "structural-explainability/spec-ep@v1",
+  { repo = "spec-se", kind = "semantic", version = "v1" },
 ]
 optional = []
 
-# === Provided artifacts ===
+# === Provided Artifacts ===
 
 [provides]
 artifacts = [
