@@ -1,5 +1,8 @@
 # Evolution Protocol Identifiers (EP)
 
+> **Archived.**
+> **Retired and no longer authoritative. See README.md.**
+
 This document defines the stable requirement identifiers used by the
 Evolution Protocol (EP) specification.
 
